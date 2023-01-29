@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+  <title>Hamburgueria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body onload="loginMostrar()">
+  <header>
+    
+    <div id="logo-bar">
+      <div id="logo">
+        <img src="static/img/logo.png" alt="Logo da Hamburgueria">
+        <h1>Hamburgueria</h1>
+
+      </div>
+      <div id="info">
+        <p>Endereço: Rua Comendador Soares, Madureira</p>
+        <p>Telefone: (21) 98765-4321</p>
+      </div>
+    </div>
+    <nav>
+      <div class="spacer"></div>
+      <ul>
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#lojas">Lojas</a></li>
+        <li><a href="/faleconosco.html">Fale Conosco</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#equipe" onclick="loginMostrar()" id="ll-login">login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="linha-a"></div>
+  <div class="painel"  id="materia">
+    <div class="painel-login"></div>
+    <div id="area-login">
+      <form >
+        <label for="username">
+          <p class="desc-l" id="link-cadastro"> Não tem cadastro?<a href="/cadastro.html" id="linkc">Aqui!</a></p>
+          <div class="linha-c"></div><br>
+        </label>
+        <input type="text" id="username" name="username" placeholder="Usuario" disabled>
+        <label for="password">-</label>
+        <input type="password" id="password" name="password" placeholder="Senha" disabled>
+        <input type="submit" id="botaoe" onclick="logar()" value="Entrar" disabled>
+      </form>
+    </div>
+    <div class="linha-c"></div>
+    <h1>Os Preferidos</h1>
+    <div class="cataleigo" id="catalogo">
+      {% for produto in produtos %}
+      <div>
+          <h2>{{ produto.nomefantasia }}</h2>
+          <p>{{ produto.valor }}</p>
+      </div>
+  {% endfor %}</div>
+  </div>
+</body>
+<script src="static/js/script.js"></script>
+<script src="static/js/arealogin.js"></script>
+<script src="static/js/catalogo.js"></script>
+</html>

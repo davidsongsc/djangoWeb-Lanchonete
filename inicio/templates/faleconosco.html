@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>ViaCEP Webservice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Adicionando Javascript -->
+
+
+</head>
+<!DOCTYPE html>
+<html lang=pt-br>
+
+<head>
+    <title>Hamburgueria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body onload="loginMostrar()">
+    <header>
+
+        <div id="logo-bar">
+            <div id="logo">
+                <img src="img/logo.png" alt="Logo da Hamburgueria">
+                <h1>Hamburgueria</h1>
+
+            </div>
+            <div id="info">
+                <p>Endereço: Rua Comendador Soares, Madureira</p>
+                <p>Telefone: (21) 98765-4321</p>
+            </div>
+        </div>
+        <nav>
+            <div class="spacer"></div>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#lojas">Lojas</a></li>
+                <li><a href="#fale-conosco">Fale Conosco</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#equipe" onclick="loginMostrar()" id="ll-login">login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="linha-a"></div>
+    <div class="painel" id="materia">
+        <div class="painel-login"></div>
+        <div id="area-login">
+
+
+
+
+            <form>
+                <label for="username">
+                    <p class="desc-l" id="link-cadastro"> Não tem cadastro?<a href="#" id="linkc">Aqui!</a></p>
+                    <div class="linha-c"></div><br>
+                </label>
+                <input type="text" id="username" name="username" placeholder="Usuario" disabled>
+                <label for="password">-</label>
+                <input type="password" id="password" name="password" placeholder="Senha" disabled>
+                <input type="submit" id="botaoe" onclick="logar()" value="Entrar" disabled>
+            </form>
+        </div>
+        <div class="linha-c"></div>
+        <style>
+            .cc-cadastro {
+                text-align: left;
+            }
+
+            .ceprua {
+                display: table;
+                padding: 10px;
+
+                margin: 8px;
+            }
+        </style>
+
+        <form method="get" action="." id="cadastro">
+            <h1>Sugestões ou Reclamações</h1>
+            <div class="cataleigo" id="catalogo">
+                <div class="cc-cadastro">
+                    <div class="ceprua">
+                        <label>Usuario:
+                            <input name="usuario" type="text" id="usuario" value="" size="7" maxlength="9"
+                                onblur="pesquisacep(this.value);" /></label><br />
+                                <textarea rows="4" cols="50" name="message" id="textarea">Insira seu texto aqui</textarea>
+                    </div>
+
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+<script src="js/arealogin.js"></script>
+<script src="js/buscacep.js"></script>
+
+</html>
+
+<body>
+    <!-- Inicio do formulario -->
+
+</body>
+
+</html>

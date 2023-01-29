@@ -1,0 +1,11 @@
+django
+djangorestframework
+mysqlclient
+graphene_django
+apollo-client
+apollo-boost
+react-apollo
+graphene-file-upload
+django-graphql-jwt
+requests
+django-cors-headers
