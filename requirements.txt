@@ -9,3 +9,4 @@ graphene-file-upload
 django-graphql-jwt
 requests
 django-cors-headers
+django-allauth

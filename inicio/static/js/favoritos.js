@@ -1,5 +1,5 @@
 const catalogoPreferidos = [];
-fetch('/graphql?query={produtos{id, nomefantasia, descricao, valor}}')
+fetch('/graphql?query={favoritos{reg, nomefantasia, descricao, valor}}')
     .then(response => {
         if (response.ok) {
             return response.json();
@@ -7,39 +7,28 @@ fetch('/graphql?query={produtos{id, nomefantasia, descricao, valor}}')
         throw new Error('Erro ao obter dados');
     })
     .then(data => {
-        const lista = data.data.produtos;
+        const lista = data.data.favoritos;
+        console.log(lista.length);
         for (let i = 0; i < lista.length; i++) {
             //        catalogoPreferidos.push(lista);
             dados = {
                 "nome": lista[i].nomefantasia,
-                "imagem": lista[i].id,
+                "imagem": lista[i].reg,
                 "descricao": lista[i].descricao,
-                "valor": lista[i].nomefantasia,
+                "valor": lista[i].valor,
             }
             catalogoPreferidos.push(dados)
             
         }
         console.log(catalogoPreferidos[0].nome);
+        var section = document.createElement("section");
         for (var i = 0; i < catalogoPreferidos.length; i++) {
-            var section = document.createElement("section");
-            var h2 = document.createElement("h2");
             var img = document.createElement("img");
-            var pValor = document.createElement("p");
-            var pDescricao = document.createElement("p");
-            section.className = "categoria-produtos"
-            section.id = "produto" + i;
-            h2.textContent = catalogoPreferidos[i].nome;;
+            section.className = "categoria-especiais"
+            section.id = "produto-favorito";
+            img.className =  "exibi"+i;
             img.src = "static/img/produtos/"+catalogoPreferidos[i].imagem+".png"
-            pValor.className = "valor-s";
-            pDescricao.className = "desc-s";
-
-            pValor.textContent = catalogoPreferidos[i].valor;;
-            pDescricao.textContent = "Descrição: " + catalogoPreferidos[i].descricao;;
             section.appendChild(img);
-            section.appendChild(h2);
-            section.appendChild(pValor);
-            section.appendChild(pDescricao);
-            
             document.getElementById("catalogo").appendChild(section);
         }
 

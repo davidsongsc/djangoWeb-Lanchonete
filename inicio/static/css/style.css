@@ -1,250 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Anton&family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Indie+Flower&family=Lobster&family=Quicksand:wght@300&display=swap');
+
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #F5F5F5;
-  width: 80%;
-  margin: 0 auto;
-}
-#area-login{
-  text-align: center;
-  background-color: #ffa60096;
-  animation-delay: 1s;
-  transition: 0s;
-  opacity: 0;
-  
-}
-#username, #password, #botaoe{
-  border-radius: 15px;
-  font-size: 20px;
-  padding: 10px;
-
-}
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="submit"]:focus {
-  background-color: #503d00;
-  color: white;
-}
-.linha-a{
-  background-color: #000000;
-  height: 2px;
-  position: relative;
-  width: 100%;
-  
-}
-.linha-b{
-  background-color: #000000;
-  height: 2px;
-  position: relative;
-  width: 100%;
-  
-}
-.linha-c{
-  background-color: #000000;
-  height: 2px;
-  position: relative;
-  width: 100%;
-  
-}
-#logo {
-  float: left; /* Flutua o logo para a esquerda */
+  background-color: rgb(220, 237, 215);
 }
 
-#logo img {
-  width: 60px; /* Define o tamanho da imagem */
-  margin: -40px 0;
-}
-#logo-bar{
-  background-color: #FFA500;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 90px 0;
-  box-shadow: 0px 9px 16px rgb(100 86 59);
-  margin: -47px -31px 0 -32px;
-}
-#logo-bar h1{
-  padding: 1px 70px;
-  font-family: 'Aboreto', cursive;
-  font-size: larger;
-}
-#info{
-  font-family: 'Quicksand', sans-serif;
-  
-}
-.spacer {
-  height: 20px; /* Define o espaçamento antes dos itens do menu */
-}
 header {
-  background-color: #000000;
-  color: #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
-  padding: 15px;
-  width: auto;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  box-shadow: 1px 2px 2px black;
+  background-color: #e78e09;
 }
 
-header nav ul li a {
-  color: #FFFFFF;
-  font-weight: 400;
-  font-size: xx-large;
+header .login {
+  padding: 20px;
+}
+
+header .login a {
+  background-color: #B91A14;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Archivo Narrow', cursive;
+  font-weight: 800;
+  padding: 5px;
   text-decoration: none;
-  font-family: 'Quicksand', sans-serif;
 }
-header nav ul {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  text-shadow: 2px 2px 2px rgb(94, 94, 94);
 
+header .login a:hover {
+  background-color: black;
+  transition: 1s;
+}
+
+#logo-bar {
+  margin: 15px;
+}
+
+#logo-bar #logo img {
+  z-index: 3;
+  width: 150px;
+  position: absolute;
+}
+
+#logo-bar #logo h1 {
+  font-family: "Aboreto";
+  font-size: 57px;
+  font-weight: 200;
+  margin: 0px 156px;
+}
+
+#logo-bar #info {
+  margin: 0px 156px;
+}
+
+header nav {
+  position: relative;
+  background-color: #B91A14;
+  height: 90px;
+  text-align: center;
+  z-index: 1;
+}
+
+header nav ul {
+  float: right;
+  display: flex;
+  height: 20px;
+  margin-right: 220px;
 }
 
 header nav ul li {
-  padding: 5px;
-  margin-right: 10px; /* Reduz o espaçamento entre os itens da lista */
-}
-header nav {
-  /* max-width: 1200px; Define um tamanho máximo para a barra de navegação */
-  margin: 0 auto; /* Centraliza a barra de navegação na tela */
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o tamanho máximo */
-}
-#banner {
-  background-color: #FFA500;
-  color: #FFFFFF;
-  text-align: center;
-  border-radius: 1px;
-  padding: 148px;
-  max-width: 1200px;
+  padding: 10px;
 }
 
-.cataleigo {
-  background-color: #FFFFFF;
-  padding: 23px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px #808080;
-}
-
-
-
-.categoria-produtos{
-  padding: 28px;
-  height: 516px;
-  width: 305px;
-  display: grid;
-
-  
-}
-.cataleigo h2 {
-  color: #000000;
-  margin-top: 05;
-  
-}
-.cataleigo {
-  text-align: center;
-  display: flex;
-  overflow-x: scroll;
-  margin: 2px 0 20px 0;
-
-}
-
-.painel{
-  text-align: center;
-  height: unset;
-  background-color: #FFA500;
-  box-shadow: 1px 2px 2px black;
-}
-.painel h1{
-  padding: 10px 0;
-  text-align: center;
-  font-size: 48px;
-  background-color: #F5F5F5;
-  font-weight: inherit;
-  font-family: 'Indie Flower', cursive;
-  box-shadow: 2px 2px 5px #333;
-  
-}
-div section img{
-  width: 321px;
-  border-radius: 73%;
-  box-shadow: 1px 7px 5px rgb(255 0 0 / 34%);
-}
-
-section{
-  background-color: #FFA500;
-  flex: 0 0 auto;
-  
-  padding: 20px;
-  margin: 0 10px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 5px #333;
-
-}
-.cataleigo ul {
-  list-style-type: none;
-}
-.categoria-produtos h2{
-  margin: 10px 0 22px 0;
-  font-family: 'Lobster', cursive;
-  font-size: 25px;
+header nav ul li a {
   color: white;
-  text-shadow: 2px 2px 2px black;
-}
-#cataleigo li {
-  color: #808080;
+  font-size: 30px;
+  font-family: "Aboreto";
   font-weight: bold;
-  margin-bottom: 10px;
-}
-.valor-s{
-  font-family: 'Archivo Narrow', sans-serif;
-  background-color: whitesmoke;
-  font-size: 49px;
-  width: 341px;
-    margin: 0 0 0 -20px;
-}
-
-.desc-s{
-  font-family: 'Archivo Narrow', sans-serif;
-  letter-spacing: 2px;
-  background-color: whitesmoke;
-  font-size: 23px;
-  width: 341px;
-  margin: 2px 0 0 -20px;
-}
-.desc-l{
-  font-family: 'Archivo Narrow', sans-serif;
-  letter-spacing: 2px;
-  background-color: whitesmoke;
-  font-size: 23px;
-  padding: 0 0 21px 0;
+  text-decoration: none;
+  text-shadow: 2px 2px 1px #1f1e1d;
 
 }
 
-#botao-menu {
-  background-color: rgb(253, 153, 2);
-  position: fixed;
-  bottom: 59px;
-  right: 12px;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50%;
-  box-shadow: 2px 2px 5px #333;
-
-}
-#botao-menu img{
-  width: 50px;
-  margin: 0 auto;
+.painel {
+  background-color: #B91A14;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-  background-color: #ffffff;
+.painel h1 {
+  background-color: teal;
+  color: #ffffff;
+  font-family: "Quicksand";
+  font-size: 60px;
+  padding: 76px;
+  position: relative;
+  top: -40px;
+  text-shadow: 3px 3px 1px black;
+  text-align: center;
+  z-index: 1;
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: rgb(253, 153, 2);
+.cat-fav {
+  position: relative;
+  top: -250px;
+  z-index: 4;
+}
+
+#produto-favorito {
+  position: relative;
+}
+
+.exibi0 {
+  position: relative;
+  width: 600px;
+  z-index: 20;
+}
+
+.exibi1 {
+  position: relative;
+  width: 683px;
+  z-index: 21;
+  left: -441px;
+}
+
+.exibi2 {
+  position: relative;
+  width: 400px;
+  z-index: 20;
+  left: -876px;
+  top: -191px;
+}
+
+.exibi3 {
+  position: relative;
+  width: 819px;
+  z-index: 19;
+  left: 665px;
+  top: -494px;
+}
+
+.exibi4 {
+  width: 600px;
+}
+
+.exibi5 {
+  width: 600px;
 }

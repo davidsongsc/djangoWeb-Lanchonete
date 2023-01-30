@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_framework',
     'graphene_django',
     'graphene_file_upload',
@@ -56,9 +61,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
 GRAPHENE = {
     'SCHEMA': 'inicio.schema.schema'
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+
 JWT_AUTH = {
     'JWT_PAYLOAD_GET_USERNAME_HANDLER':
     'path.to.jwt_get_username_from_payload_handler',
@@ -87,6 +100,12 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX':
     'JWT',
 }
+
+
+
+LOGIN_REDIRECT_URL = '/'
+
+
 ROOT_URLCONF = 'siteweb.urls'
 
 TEMPLATES = [

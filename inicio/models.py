@@ -59,7 +59,19 @@ class Logradouro(models.Model):
         managed = False
         db_table = 'logradouro'
 
+class Mostruario(models.Model):
+    reg = models.AutoField(primary_key=True)
+    id = models.OneToOneField(Dispensa, models.DO_NOTHING, db_column='id')
+    promocao = models.CharField(max_length=45, blank=True, null=True)
+    nomefantasia = models.CharField(max_length=23, blank=True, null=True)
+    descricao = models.TextField(blank=True, null=True)
+    valor = models.FloatField(blank=True, null=True)
 
+    class Meta:
+        managed = False
+        db_table = 'mostruario'
+
+        
 class Notafiscal(models.Model):
     idfiscal = models.IntegerField(blank=True, null=True)
     conferencia = models.IntegerField(blank=True, null=True)
@@ -146,7 +158,7 @@ class Produtos(models.Model):
     taxa = models.FloatField(blank=True, null=True)
     g_id = models.CharField(max_length=12)
     p_bl = models.IntegerField(blank=True, null=True)
-
+    #img = models.CharField(max_length=23, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'produtos'

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+
+<head>
+  <title>Hamburgueria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="login">
+      {% if user.is_authenticated %}
+      Ola {{ user.username }} bem vindo de volta!
+      {% else %}
+      <a href="{% url 'account_login' %}" alt="Login para o site!" title="Login">Entrar</a> ou
+      <a href="{% url 'account_signup' %}" alt="Cadastre-se" title="Cadastro">Cadastre-se</a>
+      {% endif %}
+    </div>
+    
+    <div id="logo-bar">
+      <div id="logo">
+        <img src="static/img/logo.png" alt="Logo da Hamburgueria">
+        <h1>Hamburgueria</h1>
+
+      </div>
+      <div id="info">
+        <p>Endereço: Rua Comendador Soares, Madureira</p>
+        <p>Telefone: (21) 98765-4321</p>
+      </div>
+    </div>
+    <nav>
+      <div class="spacer"></div>
+      <ul>
+        <li><a href="{% url 'inicio' %}" alt="Inicio" title="Inicio">Início</a></li>
+        <li><a href="{% url 'cardapio' %}" alt="Cardapio" title="Cardapio">Cardápio</a></li>
+        <li><a href="{% url 'delivery' %}" alt="Delivery" title="Delivery">Delivery</a></li>
+        <li><a href="{% url 'faleconosco' %}" alt="Fale Conosco" title="Fale Conosco">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="linha-a"></div>
+  <div class="painel" id="materia">
+
+    <div class="linha-c"></div>
+</body>
+
+</html>
