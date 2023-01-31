@@ -52,6 +52,9 @@ def delivery(request):
 def faleconosco(request):
     return render(request, 'faleconosco.html', {'pagina': pagina, })
 
+@login_required
+def logout(request):
+    return HttpResponseRedirect("accounts/logout/")
 
 def login(request):
     return render(request, 'inicio.html', {'pagina': pagina, })

@@ -42,7 +42,16 @@ class Dispensa(models.Model):
         managed = False
         db_table = 'dispensa'
 
+class GrupoProduto(models.Model):
+    id = models.IntegerField(primary_key=True)
+    grupo_nome = models.CharField(unique=True, max_length=12)
+    grupo_identifica = models.CharField(max_length=45)
+    modelo = models.IntegerField()
 
+    class Meta:
+        managed = False
+        db_table = 'grupo_produto'
+        
 class Logradouro(models.Model):
     usuario = models.IntegerField()
     cep = models.CharField(max_length=16, blank=True, null=True)

@@ -6,7 +6,7 @@ um modelo Django chamado "Produtos".
 
 import graphene
 from graphene_django import DjangoObjectType
-from .models import Produtos, Mostruario
+from .models import Produtos, Mostruario, GrupoProduto
 
 
 class ProdutoType(DjangoObjectType):
@@ -26,6 +26,11 @@ class ProdutoType(DjangoObjectType):
 class MostruarioType(DjangoObjectType):
     class Meta:
         model = Mostruario
+
+
+class GrupoType(DjangoObjectType):
+    class Meta:
+        model = GrupoProduto
 
 
 class Query(graphene.ObjectType):
@@ -48,7 +53,12 @@ class Query(graphene.ObjectType):
     hamburguers = graphene.List(
         ProdutoType, tipo=graphene.String(default_value='hamburguers'))
 
+    grupos = graphene.List(GrupoType)
+
     produtos = graphene.List(ProdutoType)
+
+    def resolve_grupos(self, info, **kwargs):
+        return GrupoProduto.objects.filter(modelo=1)
 
     def resolve_favoritos(self, info, **kwargs):
         return Mostruario.objects.all()

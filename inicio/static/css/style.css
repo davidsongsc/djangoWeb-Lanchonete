@@ -5,12 +5,28 @@ body {
   background-color: rgb(220, 237, 215);
 }
 
+.mosaico {
+  position: relative;
+  background-image: url("/static/img/itens/plateleira.png");
+  background-size: 1909px;
+  width: auto;
+  margin-bottom: -65px;
+  height: 133px;
+  z-index: 0;
+}
+
 header {
+
   background-color: #e78e09;
 }
 
 header .login {
-  padding: 20px;
+  padding: -19px;
+  position: relative;
+  float: right;
+  right: 468px;
+  top: -76px;
+  transform: scale(1.9);
 }
 
 header .login a {
@@ -36,6 +52,7 @@ header .login a:hover {
   z-index: 3;
   width: 150px;
   position: absolute;
+  text-transform: capitalize;
 }
 
 #logo-bar #logo h1 {
@@ -43,6 +60,13 @@ header .login a:hover {
   font-size: 57px;
   font-weight: 200;
   margin: 0px 156px;
+  width: 487px;
+  position: relative;
+  color: #ffffff;
+  background-color: #1f1e1d;
+  border-radius: 20px;
+  padding: 8px;
+  z-index: 1;
 }
 
 #logo-bar #info {
@@ -83,10 +107,11 @@ header nav ul li a {
 }
 
 .painel h1 {
-  background-color: teal;
+  background-color: rgb(33, 33, 33);
   color: #ffffff;
   font-family: "Quicksand";
   font-size: 60px;
+  background-blend-mode: screen;
   padding: 76px;
   position: relative;
   top: -40px;
@@ -94,10 +119,54 @@ header nav ul li a {
   text-align: center;
   z-index: 1;
 }
+#titulo-grupo-produtos{
+  text-transform: capitalize;
+  background-size: 20px;
+}
+.plateleira {
+  width: fit-content;
+  height: 400px;
+}
+
+.catlog {
+  background-color: #1f1e1d;
+  border-style: groove;
+  border-width: 4px;
+  /* height: 600px; */
+  display: inline-block;
+  padding: 150px;
+  text-align: center;
+}
+
+.categoria-especiais {
+  top: -466px;
+}
+
+.desc-t {
+  background-color: whitesmoke;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+
+}
+
+.loginx {
+  background-color: #B91A14;
+  /* text-align: center; */
+  border-radius: 20px;
+  padding: 126px;
+  width: min-content;
+}
+
+p a {
+  color: #1f1e1d;
+  text-decoration: dashed;
+}
 
 .cat-fav {
   position: relative;
-  top: -250px;
+  top: -252px;
+  /* height: 811px; */
   z-index: 4;
 }
 

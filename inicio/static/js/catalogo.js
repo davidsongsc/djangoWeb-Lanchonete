@@ -1,5 +1,5 @@
 const catalogoPreferidos = [];
-fetch('/graphql?query={produtos{id, nomefantasia, descricao, valor}}')
+fetch('/graphql?query={grupos{grupoNome}}')
     .then(response => {
         if (response.ok) {
             return response.json();
@@ -7,41 +7,27 @@ fetch('/graphql?query={produtos{id, nomefantasia, descricao, valor}}')
         throw new Error('Erro ao obter dados');
     })
     .then(data => {
-        const lista = data.data.produtos;
+        const lista = data.data.grupos;
         for (let i = 0; i < lista.length; i++) {
-            //        catalogoPreferidos.push(lista);
-            dados = {
-                "nome": lista[i].nomefantasia,
-                "imagem": lista[i].id,
-                "descricao": lista[i].descricao,
-                "valor": lista[i].nomefantasia,
-            }
-            catalogoPreferidos.push(dados)
-            
-        }
-        console.log(catalogoPreferidos[0].nome);
-        for (var i = 0; i < catalogoPreferidos.length; i++) {
             var section = document.createElement("section");
-            var h2 = document.createElement("h2");
-            var img = document.createElement("img");
-            var pValor = document.createElement("p");
-            var pDescricao = document.createElement("p");
-            section.className = "categoria-produtos"
-            section.id = "produto" + i;
-            h2.textContent = catalogoPreferidos[i].nome;;
-            img.src = "static/img/produtos/"+catalogoPreferidos[i].imagem+".png"
-            pValor.className = "valor-s";
-            pDescricao.className = "desc-s";
-
-            pValor.textContent = catalogoPreferidos[i].valor;;
-            pDescricao.textContent = "Descrição: " + catalogoPreferidos[i].descricao;;
-            section.appendChild(img);
-            section.appendChild(h2);
-            section.appendChild(pValor);
-            section.appendChild(pDescricao);
+            var h1 = document.createElement("h1");
+            var div = document.createElement("div");
+            console.log(lista[i]);
+            h1.className = 'titulo-grupo-produtos';
+            h1.style.backgroundImage = 'url("static/img/itens/fundo.webp")'
+            h1.style
+            h1.innerHTML = lista[i].grupoNome;
+            div.className = lista[i];
+            div.id = 'catalogo';
+            
+            section.appendChild(h1);
+            section.appendChild(div);
+            
             
             document.getElementById("catalogo").appendChild(section);
+            
         }
+
 
     })
     .catch(error => {
