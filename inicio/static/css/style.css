@@ -203,10 +203,11 @@ div section section div p h2{
 }
 #catalogo{
   margin: auto;
-  width: 90%;
+  width: 100%;
 }
 #catalogo section{
   margin-bottom: 90px;
+  margin-left: 20px;
 }
 .plateleira {
   width: fit-content;
