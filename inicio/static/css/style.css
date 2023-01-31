@@ -119,9 +119,94 @@ header nav ul li a {
   text-align: center;
   z-index: 1;
 }
-#titulo-grupo-produtos{
+
+div section section {
+  text-align: center;
+  display: inline-table;
+  max-width: min-content;
+}
+div section section h1{
+  text-transform: capitalize;
+  border-radius: 50px;
+  text-align: center;
+}
+div section section div p{
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Archivo Narrow', cursive;
+  font-weight: 200;
+  font-size: 29px;
+  background-color: #91c92bd0;
+  height: 278px;
+  padding: 8px 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 58px;
+  border-bottom-right-radius: 58px;
+  
+}
+div section section div p h2{
+  text-align: center;
+  font-family: 'Archivo Narrow', cursive;
+  font-weight: 800;
+  font-size: 30px;
+  position: relative;
+  bottom: -15%;
+  background-color: whitesmoke;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 10px;
+  width: 50%;
+}
+#bebidas section div {
+  max-width: 500px;
+  border-radius: 67px;
+  background-color: #eaf589;
+  margin: 19px 1px;
+  padding: 17px;
+}
+#bebidas section div img {
+  height: 480px;
+  width: 309px;
+}
+
+#hamburguers section div {
+  max-width: 500px;
+  border-radius: 67px;
+  background-color: #f08001;
+  margin: 10px 5px 30px 5px;
+  padding: 17px;
+}
+#hamburguers section div img {
+  height: 390px;
+  width: 309px;
+}
+
+
+#sobremesas section div {
+  max-width: 500px;
+  border-radius: 67px;
+  background-color: #f08001;
+  margin: 10px 5px 30px 5px;
+  padding: 17px;
+}
+#sobremesas section div img {
+  height: 209px;
+  width: 359px;
+}
+
+
+#titulo-grupo-produtos {
   text-transform: capitalize;
   background-size: 20px;
+
+}
+#catalogo{
+  margin: auto;
+  width: 90%;
+}
+#catalogo section{
+  margin-bottom: 90px;
 }
 .plateleira {
   width: fit-content;

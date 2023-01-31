@@ -27,7 +27,7 @@ fetch('/graphql?query={favoritos{reg, nomefantasia, descricao, valor}}')
             section.className = "categoria-especiais"
             section.id = "produto-favorito";
             img.className =  "exibi"+i;
-            img.src = "static/img/produtos/"+catalogoPreferidos[i].imagem+".png"
+            img.src = "static/img/mostruario/"+catalogoPreferidos[i].imagem+".png"
             section.appendChild(img);
             document.getElementById("catalogo").appendChild(section);
         }
