@@ -456,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `pedido_carrinho` (
   `qtd` int DEFAULT NULL,
   `observacao` varchar(18) DEFAULT NULL,
   `status` int DEFAULT NULL,
-  `dataHora` datetime DEFAULT CURRENT_TIMESTAMP,
+  `datahora` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `index` (`carrinho`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -468,15 +468,15 @@ CREATE TABLE IF NOT EXISTS `pedido_comanda` (
   `pedidoid` int NOT NULL,
   `carrinhoid` int DEFAULT NULL,
   `clienteid` int DEFAULT NULL,
-  `vendedorID` int DEFAULT NULL,
+  `vendedorid` int DEFAULT NULL,
   `datahora` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`pedidoid`),
   KEY `pedido_carrinho2_idx` (`carrinhoid`),
   KEY `pedido_auth_idx` (`clienteid`),
-  KEY `pedido_vendedor_idx` (`vendedorID`),
+  KEY `pedido_vendedor_idx` (`vendedorid`),
   CONSTRAINT `pedido_auth` FOREIGN KEY (`clienteid`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `pedido_carrinho2` FOREIGN KEY (`carrinhoid`) REFERENCES `pedido_carrinho` (`carrinho`),
-  CONSTRAINT `pedido_vendedor` FOREIGN KEY (`vendedorID`) REFERENCES `auth_user` (`id`)
+  CONSTRAINT `pedido_vendedor` FOREIGN KEY (`vendedorid`) REFERENCES `auth_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- Copiando dados para a tabela webpage.pedido_comanda: ~0 rows (aproximadamente)
@@ -488,7 +488,7 @@ CREATE TABLE IF NOT EXISTS `pedido_conferencia` (
   `totalbruto` float DEFAULT NULL,
   `totaldesconto` float DEFAULT NULL,
   `totalapagar` float DEFAULT NULL,
-  `totalTaxa` float DEFAULT NULL,
+  `totaltaxa` float DEFAULT NULL,
   `bandeira` varchar(12) DEFAULT NULL,
   `valorrecebido` float DEFAULT NULL,
   `clienteid` int DEFAULT NULL,
