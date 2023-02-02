@@ -4,14 +4,6 @@
 body {
   background-color:#2f2f2f;;
 }
-/*
-.mosaico {
-  background-image: url("/static/img/itens/plateleira.png");
-  background-size: 1909px;
-  margin-bottom: -65px;
-  height: 133px;
-  z-index: 0;
-}*/
 
 header {
 
@@ -219,6 +211,9 @@ div section section div p h2{
   margin-bottom: 90px;
   margin-left: 20px;
 }
+#catalogo #favoritos div img{
+  width: 250px;
+}
 .plateleira {
   width: fit-content;
   height: 400px;
@@ -268,41 +263,4 @@ p a {
 
 #produto-favorito {
   position: relative;
-}
-
-.exibi0 {
-  position: relative;
-  width: 600px;
-  z-index: 20;
-}
-
-.exibi1 {
-  position: relative;
-  width: 683px;
-  z-index: 21;
-  left: -441px;
-}
-
-.exibi2 {
-  position: relative;
-  width: 400px;
-  z-index: 20;
-  left: -876px;
-  top: -191px;
-}
-
-.exibi3 {
-  position: relative;
-  width: 819px;
-  z-index: 19;
-  left: 665px;
-  top: -494px;
-}
-
-.exibi4 {
-  width: 600px;
-}
-
-.exibi5 {
-  width: 600px;
 }
