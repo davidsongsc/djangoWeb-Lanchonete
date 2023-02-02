@@ -2,22 +2,22 @@
 
 
 body {
-  background-color: rgb(220, 237, 215);
+  background-color:#2f2f2f;;
 }
-
+/*
 .mosaico {
-  position: relative;
   background-image: url("/static/img/itens/plateleira.png");
   background-size: 1909px;
-  width: auto;
   margin-bottom: -65px;
   height: 133px;
   z-index: 0;
-}
+}*/
 
 header {
 
-  background-color: #e78e09;
+  background-color: #2f2f2f;
+  width: 90%;
+  margin: 0 auto;
 }
 
 header .login {
@@ -30,7 +30,7 @@ header .login {
 }
 
 header .login a {
-  background-color: #B91A14;
+  background-color: #ff0505;
   border-radius: 10px;
   color: white;
   font-family: 'Archivo Narrow', cursive;
@@ -48,9 +48,9 @@ header .login a:hover {
   margin: 15px;
 }
 
-#logo-bar #logo img {
+#logoH {
   z-index: 3;
-  width: 150px;
+  width: 190px;
   position: absolute;
   text-transform: capitalize;
 }
@@ -59,7 +59,7 @@ header .login a:hover {
   font-family: "Aboreto";
   font-size: 57px;
   font-weight: 200;
-  margin: 0px 156px;
+  margin: 0px 200px;
   width: 487px;
   position: relative;
   color: #ffffff;
@@ -70,12 +70,12 @@ header .login a:hover {
 }
 
 #logo-bar #info {
-  margin: 0px 156px;
+  margin: 0px 210px;
 }
 
 header nav {
   position: relative;
-  background-color: #B91A14;
+  background-color: #ff0505;;
   height: 90px;
   text-align: center;
   z-index: 1;
@@ -102,8 +102,14 @@ header nav ul li a {
 
 }
 
+#info p {
+
+  color: #ffffff9e;
+  font-size: 1.3rem;
+}
+
 .painel {
-  background-color: #B91A14;
+  background-color: #2f2f2f;;
 }
 
 .painel h1 {
@@ -136,7 +142,6 @@ div section section div p{
   font-family: 'Archivo Narrow', cursive;
   font-weight: 200;
   font-size: 29px;
-  background-color: #91c92bd0;
   height: 278px;
   padding: 8px 0;
   border-top-left-radius: 5px;
@@ -171,15 +176,19 @@ div section section div p h2{
 }
 
 #hamburguers section div {
+/*
   max-width: 500px;
   border-radius: 67px;
-  background-color: #f08001;
+  background-color: #d75d16; 
   margin: 10px 5px 30px 5px;
   padding: 17px;
+  */
+
+  margin: 20px;
 }
 #hamburguers section div img {
-  height: 390px;
-  width: 309px;
+
+  width: 70%;
 }
 
 
@@ -202,8 +211,9 @@ div section section div p h2{
 
 }
 #catalogo{
-  margin: auto;
-  width: 100%;
+  
+  margin: 0 auto;
+  width: 80%;
 }
 #catalogo section{
   margin-bottom: 90px;
@@ -237,7 +247,7 @@ div section section div p h2{
 }
 
 .loginx {
-  background-color: #B91A14;
+  background-color: #2f2f2f;;
   /* text-align: center; */
   border-radius: 20px;
   padding: 126px;

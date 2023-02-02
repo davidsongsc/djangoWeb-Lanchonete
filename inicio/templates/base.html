@@ -15,15 +15,14 @@
   <header>
     <div class="mosaico"></div>
     
-    
-    <div id="logo-bar">
+      <div id="logo-bar">
       <div id="logo">
-        <img src="{% static '/img/logo.png' %}" alt="Logo da Hamburgueria">
+        <img id="logoH" src="{% static '/img/logo2.png' %}" alt="Logo da Hamburgueria">
         <h1>Hamburgueria</h1>
 
       </div>
       <div id="info">
-        <p>Endereço: Rua Comendador Soares, Madureira</p>
+        <p>Endereço: Rua Comendador Soares, Madureira - RJ</p>
         <p>Telefone: (21) 98765-4321</p>
       </div>
       <div class="login">
@@ -31,7 +30,7 @@
         <a href="#">Ola {{ user.username }} bem vindo de volta!</a> 
   
         {% else %}
-        <a href="{% url 'account_login' %}" alt="Login para o site!" title="Login">Entrar</a> ou
+        <a href="{% url 'account_login' %}" alt="Login para o site!" title="Login">Entrar</a>
         <a href="{% url 'account_signup' %}" alt="Cadastre-se" title="Cadastro">Cadastre-se</a>
         {% endif %}
       </div>
