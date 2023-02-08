@@ -1,12 +1,15 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
 
 
 class ProtectedView(APIView):
@@ -58,3 +61,10 @@ def logout(request):
 
 def login(request):
     return render(request, 'inicio.html', {'pagina': pagina, })
+
+
+def allow_origin(request):
+    response = HttpResponse()
+    response['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    return response
+

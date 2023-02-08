@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ol5tw6d)z9z81v6p7dsdtkuli7iz_dh*(-^*(b6oqg0l(4$o5j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'localhost',
+                 '192.168.0.50']
 
 AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -42,14 +44,25 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'channels',
     'rest_framework',
     'graphene_django',
     'graphene_file_upload',
     'rest_framework_jwt',
     'graphql_jwt.decorators',
     'corsheaders',
+    'chatapi',
     'inicio',
+    'loja',
 ]
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis", 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -101,10 +114,7 @@ JWT_AUTH = {
     'JWT',
 }
 
-
-
 LOGIN_REDIRECT_URL = '/'
-
 
 ROOT_URLCONF = 'siteweb.urls'
 
@@ -134,8 +144,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webpage',
-        'USER': 'root',
-        'PASSWORD': '21K4hvd$$',
+        'USER': 'davidson',
+        'PASSWORD': 'P@A[ePXEIdwO0Try',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -164,7 +174,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -172,7 +182,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = [
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
+    'http://192.168.0.50:3000',
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

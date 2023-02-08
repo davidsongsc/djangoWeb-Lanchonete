@@ -427,10 +427,11 @@ CREATE TABLE IF NOT EXISTS `mostruario` (
 
 -- Copiando dados para a tabela webpage.mostruario: ~4 rows (aproximadamente)
 INSERT INTO `mostruario` (`reg`, `id`, `promocao`, `nomefantasia`, `descricao`, `valor`) VALUES
-	(20, 30, 'bra', 'Fritas', 'Fritas', 1),
-	(100, 100, 'bra', 'Fritas', 'Fritas', 1),
-	(140, 140, 'bra', 'Fritas', 'Fritas', 1),
-	(220, 220, 'bra', 'Fritas', 'Fritas', 1);
+	(1, 30, 'bra', 'Fritas', 'Fritas', 1),
+	(2, 100, 'bra', 'Fritas', 'Fritas', 1),
+	(3, 140, 'bra', 'Fritas', 'Fritas', 1),
+	(4, 220, 'bra', 'Fritas', 'Fritas', 1),
+	(5, 10, 'bra', NULL, NULL, NULL);
 
 -- Copiando estrutura para tabela webpage.notafiscal
 CREATE TABLE IF NOT EXISTS `notafiscal` (
@@ -488,6 +489,7 @@ CREATE TABLE IF NOT EXISTS `pedido_conferencia` (
   `totalbruto` float DEFAULT NULL,
   `totaldesconto` float DEFAULT NULL,
   `totalapagar` float DEFAULT NULL,
+  `totalgorjeta` float DEFAULT NULL,
   `totaltaxa` float DEFAULT NULL,
   `bandeira` varchar(12) DEFAULT NULL,
   `valorrecebido` float DEFAULT NULL,

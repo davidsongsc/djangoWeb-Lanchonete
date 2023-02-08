@@ -1,0 +1,134 @@
+body {
+    background-color: white;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    opacity: 0.99;
+    z-index: 999;
+    width: 100%;
+
+}
+
+header div div img {
+    width: 100px;
+}
+
+header div div h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#logo-bar {
+    display: flex;
+}
+
+nav ul {
+    margin: 35px 180px;
+    display: flex;
+}
+
+nav ul li {
+    background-color: rgba(215, 225, 234, 0.79);
+    padding: 0px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+nav ul li:hover {
+    background-color: black;
+    transition: 1.2s;
+}
+
+nav ul li a {
+    color: #000000c2;
+    text-shadow: 1px 1px 1px rgba(106, 85, 85, 0.785);
+    font-size: x-large;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.lista-planos {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: 20px 0 0 -20px;
+    padding: 0px;}
+
+.lista-sum:hover .lista-planos,
+.lista-planos-ativado {
+    display: block;
+}
+
+.mm {
+    padding: 130px 0 0 0;
+}
+
+#conteudo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/loja/garcom.png);
+}
+
+#sobre-conteudo {
+    background-color: #000000c7;
+    color: aliceblue;
+    height: -webkit-fill-available;
+
+}
+
+#sobre-conteudo h1 {
+    font-size: xxx-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    padding: 5% 0 0 10%;
+    max-width: 40%;
+
+}
+
+#sobre-conteudo h2 {
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    padding: 3% 0 0 10%;
+    width: 60%;
+
+}
+
+.sobre {
+    width: 70%;
+}
+
+.grupo-links {
+    text-align: center;
+    margin: 53px 0;
+    padding: 10px;
+    /* color: white;*/
+}
+
+.lng {
+
+    border-radius: 21px;
+    padding: 12px 75px;
+    color: white;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: x-large;
+}
+
+#demo {
+    background-color: green;
+}
+
+#norm {
+    background-color: darkcyan;
+}

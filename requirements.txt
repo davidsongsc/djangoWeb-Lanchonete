@@ -7,7 +7,7 @@ djangorestframework-jwt
 django-graphql-jwt
 django-cors-headers
 mysqlclient
-
+channels
 
 apollo-client
 apollo-boost

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+<head>
+    <title>Chat</title>
+    <style>
+        #chat-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        #context-container {
+            height: 600px;
+            overflow-y: scroll;
+            width: 79%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .conversation-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .message-container {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            background-color: lightgray;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin-right: 10px;
+        }
+
+        .message-status {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .received .message {
+            align-self: flex-end;
+            background-color: lightblue;
+        }
+
+        #chat-window {
+            width: 98%;
+            padding: 40px 10px;
+            border: 1px solid #ccc;
+        }
+
+        #chat-window input {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 300;
+            font-size: large;
+            width: 80%;
+            height: 70px;
+        }
+
+        #profile-container {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+
+        .profile-info {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c-conteiner">
+        <div id="chat-container">
+            <div id="context-container">
+                <div class="conversation-container">
+                    <div class="message-container sent">
+                        <div class="message">Mensagem enviada</div>
+                        <div class="message-status">Enviada</div>
+                    </div>
+                    <div class="message-container received">
+                        <div class="message">Mensagem recebida</div>
+                        <div class="message-status">Lida</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile-container">
+                <div class="profile-picture">
+                    <!-- Adicione uma imagem para o perfil do atendente aqui -->
+                </div>
+                <div class="profile-info">
+                    Atendente
+                </div>
+                <div class="profile-picture">
+                    <!-- Adicione uma imagem para o perfil do cliente aqui -->
+                </div>
+                <div class="profile-info">
+                    Cliente
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chat-window">
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input">
+        <button id="send-button" onclick="mensagemEnviada()">Enviar</button>
+    </div>
+</body>
+
+</html>

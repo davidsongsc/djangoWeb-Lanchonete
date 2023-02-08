@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+
+<head>
+  <title>Dagesico Automação Comercial</title>
+  <meta charset="UTF-8">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/loja_style.css' %}">
+
+</head>
+
+<body>
+  <header>
+    <div class="mosaico"></div>
+
+    <div id="logo-bar">
+      <div id="logo">
+        <img id="logoH" src="{% static '/img/loja/tecno.png' %}" alt="Logo da Hamburgueria">
+        <h1>Dagesico Company</h1>
+
+
+      </div>
+      <nav>
+        <div class="spacer"></div>
+        <ul>
+          <li><a href="#" alt="Inicio" title="Inicio">Sobre Nós</a></li>
+         <div class="lista-sum"> <li>
+            <a href="#" onclick="listaplanos()" alt="Cardapio" title="Cardapio">Planos</a>
+              <ul class="lista-planos">
+                <li><a href="#">Plano Basico</a></li>
+                <li><a href="#">Plano Intermediario</a></li>
+                <li><a href="#">Plano</a></li>
+              </ul>
+            </div></li>
+          <li><a href="#" alt="Delivery" title="Delivery">Forum</a></li>
+          <li><a href="#" alt="Fale Conosco" title="Fale Conosco">Fale Conosco</a></li>
+          
+        </ul>
+
+      </nav>
+  </header>
+  <div class="linha-a"></div>
+  <div class="mm"></div>
+
+  <div class="menu" id="conteudo">
+    <div id="sobre-conteudo">
+      <div class="sobre">
+      <h1>
+        Está à frente de um restaurante, food truck, bar, quiosque ou outro negócio do gênero? Temos a solução perfeita
+        para você.
+      </h1>
+      <h2>
+        Nós oferecemos um sistema de gerenciamento completo, que te ajudará a administrar suas finanças, vendas,
+        produção e estoque de maneira eficiente e fácil. Com atualizações constantes e suporte dedicado, você pode se
+        concentrar no crescimento e sucesso do seu negócio
+      </h2>
+    </div>
+      <div class="grupo-links">
+        <a href="#" class="lng" id="demo">Teste Gratis</a>
+        <a href="#" class="lng" id="norm">Planos de Assinatura</a>
+        <a href="#" class="lng" id="norm">Licenciamentos</a>
+      </div>
+    </div>
+
+    <div class="conteudo-sec">
+      <img id="logoH" src="{% static '/img/loja/tecno.png' %}" alt="Logo da Hamburgueria">
+    </div>
+
+</body>
+
+</html>
+<script>
+  function listaplanos(){
+    var lista = document.querySelector("lista-planos");
+    lista.classList.toggle('lista-planos-ativado')
+  }
+</script>
