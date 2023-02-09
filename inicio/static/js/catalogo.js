@@ -69,7 +69,7 @@ fetch('/graphql?query={grupos{grupoNome}}')
             h1.className = 'titulo-grupo-produtos';
 
             //  Adiciona a imagem fundo.webp ao background do h1.
-            h1.style.backgroundImage = 'url("static/img/itens/fundo.webp")'
+            h1.style.backgroundImage = 'url("static/img/hamburguers.png")'
 
             // Adiciona o conteudo do h1 a section.
             section.appendChild(h1);

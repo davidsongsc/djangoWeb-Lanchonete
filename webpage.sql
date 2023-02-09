@@ -201,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
 
 -- Copiando dados para a tabela webpage.auth_user: ~2 rows (aproximadamente)
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`, `pessoafisica`, `aniversario`, `telefone1`, `telefone2`) VALUES
-	(1, 'pbkdf2_sha256$390000$3l349XFvDKNL6m01J21nMD$VR5Sdo+v6Yglsj+aTtrVkVLw5ykbsRt0TFCsVfyh5dI=', '2023-01-31 15:27:21.852433', 0, 'daviiiwilliams@live.com', 'Davidson George', 'Silverio Correa', 'daviiiwilliams@live.com', 1, 1, '2023-01-29 07:20:09.899151', NULL, NULL, NULL, NULL),
+	(1, 'pbkdf2_sha256$390000$3l349XFvDKNL6m01J21nMD$VR5Sdo+v6Yglsj+aTtrVkVLw5ykbsRt0TFCsVfyh5dI=', '2023-02-08 13:51:15.192884', 0, 'daviiiwilliams@live.com', 'Davidson George', 'Silverio Correa', 'daviiiwilliams@live.com', 1, 1, '2023-01-29 07:20:09.899151', NULL, NULL, NULL, NULL),
 	(2, 'pbkdf2_sha256$390000$hVAs54fW4SAdn7ewG07Hej$uXZuytjIgcDa7qAUZw7VxDcDXzOXSsrahpnZCkxj2PU=', '2023-01-30 23:53:25.000000', 0, 'chav3s@msn.com', '', '', 'chav3s@msn.com', 0, 1, '2023-01-29 07:37:27.692916', NULL, NULL, NULL, NULL);
 
 -- Copiando estrutura para tabela webpage.auth_user_groups
@@ -231,6 +231,38 @@ CREATE TABLE IF NOT EXISTS `auth_user_user_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- Copiando dados para a tabela webpage.auth_user_user_permissions: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela webpage.chatbot
+CREATE TABLE IF NOT EXISTS `chatbot` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cliente` varchar(45) NOT NULL,
+  `conversa` int NOT NULL,
+  `atendente` varchar(45) DEFAULT NULL,
+  `datahora` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `conversac_idx` (`conversa`),
+  CONSTRAINT `conversac` FOREIGN KEY (`conversa`) REFERENCES `conversa` (`conversaid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+-- Copiando dados para a tabela webpage.chatbot: ~1 rows (aproximadamente)
+INSERT INTO `chatbot` (`id`, `cliente`, `conversa`, `atendente`, `datahora`) VALUES
+	(1, 'zero', 1, 'zero', '2023-02-07 20:14:13');
+
+-- Copiando estrutura para tabela webpage.conversa
+CREATE TABLE IF NOT EXISTS `conversa` (
+  `registro` int NOT NULL AUTO_INCREMENT,
+  `autormensagem` int DEFAULT NULL,
+  `textomensagem` text,
+  `conversaid` int NOT NULL,
+  `status` int DEFAULT '0',
+  `datahora` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`registro`),
+  KEY `id_conversa` (`conversaid`) /*!80000 INVISIBLE */
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+-- Copiando dados para a tabela webpage.conversa: ~0 rows (aproximadamente)
+INSERT INTO `conversa` (`registro`, `autormensagem`, `textomensagem`, `conversaid`, `status`, `datahora`) VALUES
+	(1, 0, 'testando um dois tres', 1, 0, '2023-02-07 20:13:54');
 
 -- Copiando estrutura para tabela webpage.dados
 CREATE TABLE IF NOT EXISTS `dados` (
@@ -372,9 +404,10 @@ CREATE TABLE IF NOT EXISTS `django_session` (
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela webpage.django_session: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela webpage.django_session: ~4 rows (aproximadamente)
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 	('0l23ag5r1w8qxfed8fztd3rpv823eng2', '.eJxVjU0KwjAQhe-StZQmpmnSnV4kTGamNFhSaVJQxLubShe6GXg_872X8LCVyW-ZVx9JDEKK068XAG-c9gDmebcbQFy2VJpv54hzc6mKU4kIJS7penz9oSbIU-VoM3adUwbbwBZYG2sJoSUbzqCCUZLGUZueGEESs6sXSaqeHanWKb1DM-dcZzw_7nF9iqF9fwDo5kRy:1pMh2C:fpesvLOLa5NyDvzhwdqSKWCK-w0Luw8ASQoiqqaLE8s', '2023-02-14 03:10:12.642709'),
+	('fb2ny61ze8smtemncc2pel8ytf04my4o', '.eJxVjdEKwjAMRf-lzzLa2nXt3vRHSppkrDg2WTtQxH-3kz3oSyD3JOe-RICtjGHLvIZEohdKnH6zCHjjeQcwTXvcAOKyzaX53hw4N5e68VwSQknLfD2-_lQj5LF6jB3a1muLMrIDNtY5QpDk4hl0tFrRMBjbESMoYvZ1IindsSctvTa7NHPOtSbw457Wp-hVJVbK9weGLUWk:1pPkqx:x5LSeK5lQWGD6ShzH8btHOzOakvVH6H0Pbd33P0uvHQ', '2023-02-22 13:51:15.203629'),
 	('m8av7v7vxaqx4t5tblm1hl5c4bo0gr20', '.eJxVjU0KwjAQhe-StZQmpmnSnV4kTGamNFhSaVJQxLubShe6GXg_872X8LCVyW-ZVx9JDEKK068XAG-c9gDmebcbQFy2VJpv54hzc6mKU4kIJS7penz9oSbIU-VoM3adUwbbwBZYG2sJoSUbzqCCUZLGUZueGEESs6sXSaqeHanWKb1DM-dcZzw_7nF9iqF9fwDo5kRy:1pMSiJ:_vLHscByGBO0OABclaAcBIKrEkLcBGhhCSR1jUFjarM', '2023-02-13 11:52:43.242637'),
 	('sgqbcdgq2fu3axjnjpwfqg0biio10nn0', '.eJxVjdEKwjAMRf-lzzLa2nXt3vRHSppkrDg2WTtQxH-3kz3oSyD3JOe-RICtjGHLvIZEohdKnH6zCHjjeQcwTXvcAOKyzaX53hw4N5e68VwSQknLfD2-_lQj5LF6jB3a1muLMrIDNtY5QpDk4hl0tFrRMBjbESMoYvZ1IindsSctvTa7NHPOtSbw457Wp-hVJVbK9weGLUWk:1pMgio:y8IAwMchjKjIdNUGKswTjnb2ma9tEDiUX-biJv1feU8', '2023-02-14 02:50:10.346909');
 
@@ -388,11 +421,13 @@ CREATE TABLE IF NOT EXISTS `grupo_produto` (
   UNIQUE KEY `grupo_nome` (`grupo_nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela webpage.grupo_produto: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela webpage.grupo_produto: ~5 rows (aproximadamente)
 INSERT INTO `grupo_produto` (`id`, `grupo_nome`, `grupo_identifica`, `modelo`) VALUES
 	(1, 'hamburguers', '0', 1),
 	(2, 'sobremesas', '0', 1),
-	(3, 'bebidas', '0', 1);
+	(3, 'bebidas', '0', 1),
+	(4, 'sanduiches', '0', 0),
+	(9, 'extras', '0', 1);
 
 -- Copiando estrutura para tabela webpage.logradouro
 CREATE TABLE IF NOT EXISTS `logradouro` (
@@ -489,7 +524,6 @@ CREATE TABLE IF NOT EXISTS `pedido_conferencia` (
   `totalbruto` float DEFAULT NULL,
   `totaldesconto` float DEFAULT NULL,
   `totalapagar` float DEFAULT NULL,
-  `totalgorjeta` float DEFAULT NULL,
   `totaltaxa` float DEFAULT NULL,
   `bandeira` varchar(12) DEFAULT NULL,
   `valorrecebido` float DEFAULT NULL,
@@ -523,7 +557,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   CONSTRAINT `FK_produtos_grupo_produto` FOREIGN KEY (`g_id`) REFERENCES `grupo_produto` (`grupo_nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela webpage.produtos: ~29 rows (aproximadamente)
+-- Copiando dados para a tabela webpage.produtos: ~40 rows (aproximadamente)
 INSERT INTO `produtos` (`id`, `nomeproduto`, `nomefantasia`, `descricao`, `promo`, `custo`, `valor`, `imposto`, `taxa`, `g_id`, `p_bl`) VALUES
 	(10, 'agua s ml', 'agua sem gas', 'agua mineral sem gas 500ml', NULL, 0, 4, 2, 0, 'bebidas', 0),
 	(11, 'agua s lt', 'garrafa d\'agua mineral', 'agua mineral sem gas 1L', NULL, 0, 6, 2, 0, 'bebidas', 0),
@@ -547,13 +581,24 @@ INSERT INTO `produtos` (`id`, `nomeproduto`, `nomefantasia`, `descricao`, `promo
 	(35, 'sc abacaxi e', 'suco d\'abacaxi e', 'batido com gelo no liquidificador, refrescante', NULL, 0, 6, 3, 0, 'bebidas', 0),
 	(36, 'sc abacaxi h e', 'abacaxi hortelã e', 'batido com gelo no liquidificador, refrescante', NULL, 0, 6, 3, 0, 'bebidas', 0),
 	(37, 'sc manga e', 'suco d\'manga e', 'batido com gelo no liquidificador, refrescante', NULL, 0, 6, 3, 0, 'bebidas', 0),
-	(100, 'chavaburg', 'Djayk burguer', 'Hamburguer especial da casa, carne de 175g temperada e grelhada em chama aberta com queijo prato, pão brioche, maionese, alface, tomate e cebola.', NULL, 0, 23.95, 7, 0, 'hamburguers', 1),
-	(101, 'baconmax', 'B\'Max Situation', 'Hamburguer de 200g especial Alcatra, queijo, bacon, alfate, tomate, cebola e picles', NULL, 0, 29.95, 7, 0, 'hamburguers', 1),
-	(102, 'burgx', 'E.I.C.  burguer', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
-	(140, 'fritasp', 'Fritas pequena', 'Porção de batata fritas especiais', NULL, 0, 7.95, 7, 0, 'hamburguers', 1),
+	(100, 'chavaburg', 'Chavroso', 'Hamburguer especial da casa, carne de 175g temperada e grelhada em chama aberta com queijo prato, pão brioche, maionese, alface, tomate e cebola.', NULL, 0, 23.95, 7, 0, 'hamburguers', 1),
+	(101, 'baconmax', 'Maximus', 'Hamburguer de 200g especial Alcatra, queijo, bacon, alfate, tomate, cebola e picles', NULL, 0, 29.95, 7, 0, 'hamburguers', 1),
+	(102, 'burgx', 'ESPECIAL X', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
+	(103, 'gigabacon', 'BRAVO BULL', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
+	(104, 'tinoburg', 'JACK TOMATE', 'Hamburguer de 200g especial Alcatra, queijo, bacon, alfate, tomate, cebola e picles', NULL, 0, 29.95, 7, 0, 'hamburguers', 1),
+	(105, 'primus', 'prim\'mus', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
+	(106, 'tonycebola', 'tony cebola', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
+	(107, 'bbqburg', 'Premium Barbecue', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 1),
+	(140, 'fritasp', 'Fritas pequena', 'Porção de batata fritas especiais', NULL, 0, 7.95, 7, 0, 'extras', 1),
+	(141, 'arrozcam', 'Arroz de Camarão', 'Arroz', NULL, 0, 19.95, 1, 1, 'extras', 1),
+	(177, 'poc', 'poc balum', 'Hamburguer especial de 295g, queijo cheddar, bacon tiras, bacon tosty, maionese defumada, alface e pão brioche de mel', NULL, 0, 32.95, 7, 0, 'hamburguers', 0),
+	(200, 'tortapessego', 'Torta Pessego', 'Torta recheada especial', NULL, 0, 19.95, 0, 0, 'sobremesas', 1),
 	(220, 'melito', 'Duas taças de sobremesa', 'sobremesa saborosa', NULL, 0, 0, 0, 0, 'bebidas', 0),
 	(230, 'maylito', 'May Lito Brownei', 'Brownei de chocolate com bola de sorvete e calda de chocolate. Otimo para compartilhar!', NULL, 0, 19.95, 0, 0, 'sobremesas', 1),
-	(383, 'SambiFrang', 'SambiFrang', 'Sanduiche de frango com cream cheese, cenoura, pepino, alface', NULL, 0, 22.45, 7, 0, 'hamburguers', 1);
+	(231, 'mirana', 'Biscoitos Recheados', 'Biscoitos Recheados com Doce de leite e  Chocolate Branco', NULL, 0, 19.95, 0, 0, 'sobremesas', 1),
+	(232, 'cannoli', 'Cannoli', 'Cannoli Recheado com cream cheese e chocolate branco.', NULL, 0, 19.95, 0, 0, 'sobremesas', 1),
+	(233, 'cakeespecial', 'Cake Especial', 'Brownei de chocolate com bola de sorvete e calda de chocolate. Otimo para compartilhar!', NULL, 0, 19.95, 0, 0, 'sobremesas', 1),
+	(383, 'SambiFrang', 'SambiFrang', 'Sanduiche de frango com cream cheese, cenoura, pepino, alface', NULL, 0, 22.45, 7, 0, 'sanduiches', 1);
 
 -- Copiando estrutura para tabela webpage.rota
 CREATE TABLE IF NOT EXISTS `rota` (
