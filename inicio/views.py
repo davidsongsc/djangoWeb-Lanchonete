@@ -1,15 +1,18 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from graphene_django.views import GraphQLView
-from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+
+from graphene_django.views import GraphQLView
 
 
 class ProtectedView(APIView):

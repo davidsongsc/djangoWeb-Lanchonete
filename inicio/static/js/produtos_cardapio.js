@@ -37,6 +37,7 @@ fetch('/graphql?query={produtos{nomeproduto, nomefantasia, descricao, valor, gId
             //
             section.id = 'ecl-' + cardapio[i].nomeproduto;
             section.className = 'interino-' + cardapio[i].gid;
+            
 
             // Cria o elemento h1.
             var h1 = document.createElement("h1");
@@ -74,10 +75,10 @@ fetch('/graphql?query={produtos{nomeproduto, nomefantasia, descricao, valor, gId
             //img.className = "exibi" + i;
             img.src = "static/img/produtos/" + cardapio[i].nomeproduto + ".png";
             // gera link para tag a.
-            taga.href = "#";
+            //taga.href = "#";
             taga.appendChild(h1);
-            taga.appendChild(h2);
             taga.appendChild(img);
+            taga.appendChild(h2);
             div.appendChild(taga);
 
 
@@ -85,7 +86,7 @@ fetch('/graphql?query={produtos{nomeproduto, nomefantasia, descricao, valor, gId
             //div.appendChild(img);
 
             // Adiciona p dentro da div.
-            //div.appendChild(p);
+            div.appendChild(p);
 
             // Adiciona a div dentro da section
             section.appendChild(div);

@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('inicio.urls')),
     path('loja/', include('loja.urls')),
     path('ws/', include('chatapi.urls')),
-   
+    #path('oauth/', include('social_django.urls', namespace='social')),  # <-- here
 ]

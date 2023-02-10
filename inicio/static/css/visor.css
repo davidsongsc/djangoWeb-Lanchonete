@@ -1,0 +1,192 @@
+@media only screen and (max-width: 680px) {
+	body {
+		background-color: black;
+		padding: 0;
+		margin: 0;
+	}
+
+	#logo-bar {
+		display: none;
+	}
+
+	header nav {
+		height: 283px;
+	}
+
+	header nav ul {
+		/* float: right; */
+		/* display: flex; */
+		height: 20px;
+
+	}
+
+	header nav ul li {
+		width: 100%;
+		padding: 10px 0;
+		font-family: "Archivo", cursive;
+		font-size: 25px;
+		font-weight: 200;
+	}
+
+	.lista-planos {
+		width: 232px;
+		margin: 5px -1px 0 72px;
+	}
+
+	.titulo-grupo-produtos {
+		font-size: 33px;
+		font-weight: 800;
+	}
+
+	section section {
+		width: 182px;
+		height: 380px;
+		margin: 2px;
+
+	}
+
+	section section div img {
+		background-color: white;
+		box-shadow: 2px 2px 2px white;
+		border-radius: 50%;
+		margin: 10px;
+		transition: 0.8s;
+		width: 160px;
+	}
+
+	.section section div h1 {
+		position: relative;
+		padding: 18px 3px;
+		text-align: left;
+		margin: 0px;
+
+	}
+
+	section section div:hover {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+}
+
+@media only screen and (min-width:681px) and (max-width: 820px) {
+	body {
+		background-color: black;
+		padding: 0;
+		margin: 0;
+	}
+
+	#logo-bar {
+		display: relative;
+
+	}
+
+	#logoH {
+		z-index: 3;
+		width: 166px;
+		right: 20px;
+		position: absolute;
+		text-transform: capitalize;
+	}
+
+	#logo-bar #logo h1 {
+		color: #ffffff;
+		background-color: #1f1e1d;
+		font-size: 89px;
+		z-index: 1;
+	}
+
+	header nav {
+		height: 283px;
+	}
+
+	#logo-bar #info {
+		margin: 46px 24px;
+	}
+
+	header nav ul {
+		/* float: right; */
+		/* display: flex; */
+		height: 20px;
+
+	}
+
+	header nav ul li {
+		width: 100%;
+		padding: 10px 0;
+		font-family: "Archivo", cursive;
+		font-size: 25px;
+		font-weight: 200;
+	}
+
+	.titulo-grupo-produtos {
+		font-size: 33px;
+		font-weight: 800;
+	}
+
+	section section {
+		margin: 4px 4px 4px 4px;
+		box-shadow: 0px 0px 1px ivory;
+		width: 200px;
+		height: 380px;
+	}
+
+	section section div img {
+		background-color: white;
+		box-shadow: 2px 2px 2px white;
+		border-radius: 50%;
+		transition: 0.8s;
+		width: 160px;
+	}
+
+	.section section div h1 {
+		position: relative;
+		padding: 18px 3px;
+
+	}
+
+	section section div:hover {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+}
+
+@media only screen and (min-width:821px) {
+	#logoH {
+		width: 111px;
+		right: 5px;
+	}
+	#logo h1{
+		font-size: 63px;
+		padding: 10px;
+	}
+	#logo-bar #info{
+		margin: 8px 0;
+	}
+	header nav{
+		height: 30px;
+	}
+	header nav ul{
+		display: flex;
+	}
+	header nav ul li{
+		font-size: 25px;
+		padding: 1px 15px;
+	}
+	section section {
+		width: 359px;
+		height: 450px;
+		margin: 5px;
+	}
+	section section div h1{
+		background-color: #1f1e1d9d;
+	}
+	section section div img {
+		margin: 10px 0;
+		width: 325px;
+	}
+	.lista-planos{
+		margin-top: -3px;
+	}
+}

@@ -53,6 +53,14 @@ fetch('/graphql?query={grupos{grupoNome}}')
 
         // Loop de elaboração dos grupos de produtos.
         for (let i = 0; i < lista.length; i++) {
+            var link = document.createElement("a");
+            link.href = "#" + lista[i].grupoNome;
+            var li = document.createElement("li");
+            li.innerText = lista[i].grupoNome;
+            link.appendChild(li);
+
+            conteudo = document.querySelector(".lista-planos");
+            conteudo.appendChild(link);
             // Cria o elemento section que abriga o nome dos grupos dos produtos.
             var section = document.createElement("section");
 
@@ -69,7 +77,7 @@ fetch('/graphql?query={grupos{grupoNome}}')
             h1.className = 'titulo-grupo-produtos';
 
             //  Adiciona a imagem fundo.webp ao background do h1.
-            h1.style.backgroundImage = 'url("static/img/hamburguers.png")'
+            h1.style.backgroundImage = 'url("static/img/itens/plateleira.png")'
 
             // Adiciona o conteudo do h1 a section.
             section.appendChild(h1);

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang=pt-br>
-  {% load static %}
+{% load static %}
+
 <head>
   <title>Hamburgueria</title>
   <meta charset="UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/visor.css' %}">
 
 </head>
 
 <body>
   <header>
     <div class="mosaico"></div>
-    
-      <div id="logo-bar">
+
+    <div id="logo-bar">
       <div id="logo">
         <img id="logoH" src="{% static '/img/logo2.png' %}" alt="Logo da Hamburgueria">
         <h1>Hamburgueria</h1>
@@ -25,23 +27,38 @@
         <p>Endereço: Rua Comendador Soares, Madureira - RJ</p>
         <p>Telefone: (21) 98765-4321</p>
       </div>
-      <div class="login">
-        {% if user.is_authenticated %}
-        <a href="#">Ola {{ user.username }} bem vindo de volta!</a> 
-  
-        {% else %}
-        <a href="{% url 'account_login' %}" alt="Login para o site!" title="Login">Entrar</a>
-        <a href="{% url 'account_signup' %}" alt="Cadastre-se" title="Cadastro">Cadastre-se</a>
-        {% endif %}
-      </div>
+
     </div>
     <nav>
       <div class="spacer"></div>
       <ul>
         <li><a href="{% url 'inicio' %}" alt="Inicio" title="Inicio">Início</a></li>
-        <li><a href="{% url 'cardapio' %}" alt="Cardapio" title="Cardapio">Cardápio</a></li>
+        <div class="lista-sum">
+          <li>
+            <a href="{% url 'cardapio' %}" onclick="listaplanos()" alt="Cardapio" title="Cardapio">Cardapio</a>
+            <ul class="lista-planos">
+
+            </ul>
+        </div>
+        </li>
         <li><a href="{% url 'delivery' %}" alt="Delivery" title="Delivery">Delivery</a></li>
         <li><a href="{% url 'faleconosco' %}" alt="Fale Conosco" title="Fale Conosco">Fale Conosco</a></li>
+        {% if user.is_authenticated %}
+        <li>
+
+     
+          <a href="#">Ola {{ user.username }} bem vindo de volta!</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'account_login' %}" alt="Login para o site!" title="Login">Entrar</a>
+        </li>
+        <li>
+          <a href="{% url 'account_signup' %}" alt="Cadastre-se" title="Cadastro">Cadastre-se</a>
+        </li>
+        {% endif %}
+
+        </li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'logout' %}" alt="Sair" title="Desconectar-se">Sair</a></li>
         {% endif %}

@@ -6,7 +6,7 @@ from graphene_file_upload.django import FileUploadGraphQLView
 
 urlpatterns = [
     #path('index&=<str:pagina>', central, name="central"),
-   path('', home, name="inicio"),
+    path('', home, name="inicio"),
     path('index&=inicio', inicio, name="inicio"),
     path('index&=faleconosco', faleconosco, name="faleconosco"),
     path('index&=cardapio', cardapio, name="cardapio"),
